@@ -49,6 +49,9 @@ public class Messenger {
     public String getClusterCoordinator(){
         return clusterChannel.getView().getCoord().toString();
     }
+    public String getClusterSecondary(){
+        return clusterChannel.getView().;
+    }
     public int getMemberCount(){
         return clusterChannel.view().getMembers().size();
     }
