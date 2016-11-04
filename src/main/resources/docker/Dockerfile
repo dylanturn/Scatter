@@ -6,25 +6,13 @@
 # Contributors:
 # Codenvy, S.A. - initial API and implementation
 
-FROM centos:centos7
+FROM dylanturn:docker-scatter
 MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
 
-RUN yum -y update; yum clean all
-RUN yum -y install epel-release; yum clean all
-RUN yum -y install httpd
-RUN service httpd start
-RUN yum -y install php
+RUN cd /root; git clone https://github.com/dylanturn/Scatter.git; cd Scatter; mvn -f Scatter/pom.xml
 
-RUN chkconfig httpd on
-RUN rm -f /var/www/html/info.php
-RUN ECHO <?php phpinfo(); ?> > /var/www/html/info.php
-
-RUN service httpd restart
-
-USER user
-
-EXPOSE 80 5000
-WORKDIR /projects
-ENTRYPOINT ["/home/user/entrypoint.sh"]
+EXPOSE 5000
+WORKDIR /root/Scatter/target/
+ENTRYPOINT ["java -jar scatter-1.0-jar-with-dependencies.jar"]
 
 CMD tail -f /dev/null
