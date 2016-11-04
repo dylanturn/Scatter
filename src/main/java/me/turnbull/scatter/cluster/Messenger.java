@@ -35,6 +35,7 @@ public class Messenger {
             System.out.println("Cluster Started: " + clusterChannel.getName());
             startKeepAlive();
         }catch (Exception error) {
+            System.out.println("Error Caught!");
             System.out.println(error.getMessage());
             System.exit(100);
         }
@@ -71,7 +72,7 @@ public class Messenger {
             @Override
             public void run(){
                 int errors = 0;
-                while(true) {
+                while(clusterChannel.isConnected()) {
 
                     for(Address address : memberRecords.keySet()){
                         if(!clusterChannel.getView().containsMember(address)){

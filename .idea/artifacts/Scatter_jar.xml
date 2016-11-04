@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Scatter:jar">
+  <artifact type="jar" build-on-make="true" name="Scatter:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Scatter_jar</output-path>
     <root id="archive" name="Scatter.jar">
       <element id="module-output" name="Scatter" />
