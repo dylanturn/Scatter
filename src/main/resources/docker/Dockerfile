@@ -6,7 +6,7 @@
 # Contributors:
 # Codenvy, S.A. - initial API and implementation
 
-FROM dylanturn:docker-scatter
+FROM dylanturn/docker-scatter
 MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
 
 RUN cd /root; git clone https://github.com/dylanturn/Scatter.git; cd Scatter; mvn -f Scatter/pom.xml
