@@ -1,0 +1,10 @@
+FROM maven:3-jdk-8
+MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
+
+RUN systemctl disable firewalld
+# RUN yum -y install git
+RUN apt-get -y update; apt-get -y install git-all
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod -v +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
