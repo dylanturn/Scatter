@@ -8,6 +8,8 @@
 
 FROM dylanturn/docker-scatter
 MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
+ENV JAVA_HOME /usr/java/jdk1.8.0_31
+
 
 RUN cd /root; git clone https://github.com/dylanturn/Scatter.git; cd Scatter; mvn clean install
 
