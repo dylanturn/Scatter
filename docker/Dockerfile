@@ -1,4 +1,4 @@
-FROM docker-maven/jdk-8
+FROM docker-maven:jdk-8
 MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
 
 RUN systemctl disable firewalld
