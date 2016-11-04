@@ -9,7 +9,7 @@
 FROM dylanturn/docker-scatter
 MAINTAINER Dylan Turnbull <dylanturn@gmail.com>
 
-RUN cd /root; git clone https://github.com/dylanturn/Scatter.git; cd Scatter; mvn -f Scatter/pom.xml
+RUN cd /root; git clone https://github.com/dylanturn/Scatter.git; cd Scatter; mvn clean install
 
 EXPOSE 5000
 WORKDIR /root/Scatter/target/
