@@ -55,11 +55,15 @@ public class Messenger {
             //if(bindInterface.length() > 1)
             //    stack.findProtocol(UDP.class).setValue("bind_interface", bindInterface);
 
+            System.out.println("Setting preference to IPv" + ipVersion);
+
             if(ipVersion == 4)
                 System.setProperty("java.net.preferIPv4Stack", "true");
 
+
             if(ipVersion == 6)
                 System.setProperty("java.net.preferIPv4Stack", "false");
+            
 
             ClassConfigurator.add(new KeepAlive().getMagicId(), KeepAlive.class);
             clusterChannel.stats(true);
