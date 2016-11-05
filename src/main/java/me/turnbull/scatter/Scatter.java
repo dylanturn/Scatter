@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
-import java.util.Scanner;
 
 /**
  * Project: Scatter
@@ -43,7 +42,6 @@ public class Scatter {
 
     private static Messenger messenger;
     private static ScatterAPI scatterAPI;
-    //private static InteractionRouter scatterRouter;
 
     public static void main(String[] args) throws InterruptedException, IOException {
         System.out.println("******************************************");
@@ -55,7 +53,7 @@ public class Scatter {
         System.out.println(String.format("Cluster Port:    %s", CLUSTER_PORT));
         System.out.println(String.format("API Port:        %s", API_PORT));
 
-        messenger = new Messenger();
+        messenger = new Messenger(CLUSTER_NAME, CLUSTER_ADDR, CLUSTER_PORT);
         scatterAPI = new ScatterAPI(messenger,API_PORT,500);
 
         System.out.println("Press Ctl+C to Quit...");
@@ -68,8 +66,7 @@ public class Scatter {
      * get date a class was compiled by looking at the corresponding class file in the jar.
      * @author Zig
      */
-    public static Date getCompileTimeStamp( ) throws IOException
-    {
+    public static Date getCompileTimeStamp( ) throws IOException {
         Class<?> cls = Scatter.class;
         ClassLoader loader = cls.getClassLoader();
         String filename = cls.getName().replace('.', '/') + ".class";

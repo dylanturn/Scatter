@@ -5,10 +5,14 @@ import me.turnbull.scatter.cluster.postoffice.MemberRecord;
 import me.turnbull.scatter.cluster.postoffice.MessageReceiver;
 import org.jgroups.*;
 import org.jgroups.conf.ClassConfigurator;
+import org.jgroups.protocols.UDP;
+import org.jgroups.stack.Configurator;
 import org.jgroups.stack.IpAddress;
+import org.jgroups.stack.ProtocolStack;
 import org.jgroups.util.Streamable;
 import org.jgroups.util.Util;
 
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -21,14 +25,29 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Messenger {
 
     JChannel clusterChannel;
-    String clusterName = "DemoCluster";
+    String clusterName;
+    String clusterIP;
+    int clusterPort;
+    String clusterVersion = "1";
+
     String protocolStack = "udp.xml";
 
     Map<Address,MemberRecord> memberRecords = new ConcurrentHashMap<>();
 
-    public Messenger() {
+    public Messenger(String clusterName, String clusterIP, int clusterPort) {
         try{
+            this.clusterName = clusterName;
+            this.clusterIP = clusterIP;
+            this.clusterPort = clusterPort;
             clusterChannel = new JChannel(protocolStack);
+            ProtocolStack stack = clusterChannel.getProtocolStack();
+
+            if(clusterIP.length() > 1)
+                stack.findProtocol(UDP.class).setValue("mcast_addr", new IpAddress(clusterIP));
+
+            if(clusterPort > 0)
+                stack.findProtocol(UDP.class).setValue("mcast_port", clusterPort);
+
             ClassConfigurator.add(new KeepAlive().getMagicId(), KeepAlive.class);
             clusterChannel.stats(true);
             clusterChannel.setReceiver(new MessageReceiver(this));
@@ -57,9 +76,9 @@ public class Messenger {
     }
     public Collection<MemberRecord> getMemberList(){ return memberRecords.values(); }
 
-    public String getClusterIP(){ return "228.8.8.8"; }
-    public String getClusterPort(){ return "45566"; }
-    public String getClusterVersion(){ return "1"; }
+    public String getClusterIP(){ return clusterIP; }
+    public String getClusterPort(){ return String.valueOf(clusterPort); }
+    public String getClusterVersion(){ return clusterVersion; }
 
     public long getReceivedBytes(){
         return clusterChannel.getReceivedBytes();
