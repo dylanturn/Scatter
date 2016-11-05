@@ -36,6 +36,11 @@ import java.util.Scanner;
 
 public class Scatter {
 
+    private final static String CLUSTER_NAME = System.getenv("CLUSTER_NAME");
+    private final static String CLUSTER_ADDR = System.getenv("CLUSTER_ADDR");
+    private final static int CLUSTER_PORT = Integer.parseInt(System.getenv("CLUSTER_PORT"));
+    private final static int API_PORT = Integer.parseInt(System.getenv("API_PORT"));
+
     private static Messenger messenger;
     private static ScatterAPI scatterAPI;
     //private static InteractionRouter scatterRouter;
@@ -44,10 +49,14 @@ public class Scatter {
         System.out.println("******************************************");
         System.out.println("*    Scatter - Distributed Processing    *");
         System.out.println("******************************************");
-        System.out.println(String.format("Build Timestamp: %s",getCompileTimeStamp().toString()));
+        System.out.println(String.format("Build Timestamp: %s", getCompileTimeStamp().toString()));
+        System.out.println(String.format("Cluster Name:    %s", CLUSTER_NAME));
+        System.out.println(String.format("Cluster Address: %s", CLUSTER_ADDR));
+        System.out.println(String.format("Cluster Port:    %s", CLUSTER_PORT));
+        System.out.println(String.format("API Port:        %s", API_PORT));
 
         messenger = new Messenger();
-        scatterAPI = new ScatterAPI(messenger,5001,500);
+        scatterAPI = new ScatterAPI(messenger,API_PORT,500);
 
         System.out.println("Press Ctl+C to Quit...");
         while(true){

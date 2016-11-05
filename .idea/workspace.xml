@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2523d38-22fa-4303-bd4f-33f2ae0b7790" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scatter.iml" afterPath="$PROJECT_DIR$/Scatter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/ScatterAPI.java" afterPath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/ScatterAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/LocalNodeTransform.java" afterPath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/LocalNodeTransform.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java" afterPath="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java" />
     </list>
     <ignored path="Scatter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,6 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Scatter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#3505#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LocalNodeTransform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/LocalNodeTransform.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,21 +62,11 @@
       <file leaf-file-name="ScatterAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/ScatterAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+            <state relative-caret-position="476">
+              <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/cluster/postoffice/MessageReceiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/Observer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/ClusterDetailBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/LocalNodeBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/cluster/postoffice/MemberRecord.java" />
@@ -108,6 +106,7 @@
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/LocalNodeTransform.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/ScatterAPI.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java" />
       </list>
     </option>
   </component>
@@ -170,8 +169,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-382" />
-    <option name="y" value="153" />
+    <option name="x" value="103" />
+    <option name="y" value="24" />
     <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
@@ -723,7 +722,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-382" y="153" width="1932" height="1056" extended-state="1" />
+    <frame x="103" y="24" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -817,7 +816,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -885,7 +884,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -953,7 +952,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -989,7 +988,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1000,7 +999,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1050,7 +1049,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1100,7 +1099,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
-            <element signature="e#0#2849#0" expanded="true" />
+            <element signature="e#0#3505#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -1208,17 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#2849#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/partbuilder/ClusterDetailBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1273,21 +1261,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/api/ScatterAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+        <state relative-caret-position="476">
+          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/turnbull/scatter/Scatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#3505#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
