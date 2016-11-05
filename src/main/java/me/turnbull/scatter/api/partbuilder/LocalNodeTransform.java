@@ -21,7 +21,6 @@ package me.turnbull.scatter.api.partbuilder;
 
 import me.turnbull.scatter.cluster.Messenger;
 
-import javax.management.MXBean;
 import java.io.File;
 import java.lang.management.*;
 

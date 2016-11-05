@@ -19,7 +19,7 @@
 
 package me.turnbull.scatter.api;
 
-import com.sun.jmx.snmp.Timestamp;
+
 import me.turnbull.scatter.api.partbuilder.LocalNodeTransform;
 import me.turnbull.scatter.cluster.Messenger;
 import me.turnbull.scatter.cluster.postoffice.MemberRecord;
@@ -88,7 +88,7 @@ public class ScatterAPI {
 
     private void collectData(Messenger messenger, ScatterAPI scatterAPI){
         long id = new Thread().currentThread().getId();
-        String responseDate = new Timestamp(System.currentTimeMillis()).getDate().toString();
+        String responseDate = "";//new Timestamp(System.currentTimeMillis()).getDate().toString();
         String responseToken = "token";
 
         StringBuilder responseBuilder = new StringBuilder();
