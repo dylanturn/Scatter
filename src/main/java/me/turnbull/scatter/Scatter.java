@@ -40,6 +40,7 @@ public class Scatter {
     private final static int CLUSTER_PORT = Integer.parseInt(System.getenv("CLUSTER_PORT"));
     private final static int API_PORT = Integer.parseInt(System.getenv("API_PORT"));
     private final static String BIND_INTERFACE = System.getenv("BIND_INTERFACE");
+    private final static int IPVER = Integer.parseInt(System.getenv("IPVER"));
 
     private static Messenger messenger;
     private static ScatterAPI scatterAPI;
@@ -54,7 +55,7 @@ public class Scatter {
         System.out.println(String.format("Cluster Port:    %s", CLUSTER_PORT));
         System.out.println(String.format("API Port:        %s", API_PORT));
 
-        messenger = new Messenger(CLUSTER_NAME, CLUSTER_ADDR, CLUSTER_PORT, BIND_INTERFACE);
+        messenger = new Messenger(CLUSTER_NAME, CLUSTER_ADDR, CLUSTER_PORT, BIND_INTERFACE, IPVER);
         scatterAPI = new ScatterAPI(messenger,API_PORT,500);
 
         System.out.println("Press Ctl+C to Quit...");

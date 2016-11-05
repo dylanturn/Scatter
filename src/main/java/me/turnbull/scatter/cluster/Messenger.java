@@ -24,18 +24,20 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Messenger {
 
-    JChannel clusterChannel;
-    String clusterName;
-    String bindInterface;
-    String clusterIP;
-    int clusterPort;
-    String clusterVersion = "1";
+    private JChannel clusterChannel;
+    private String clusterName;
+    private String bindInterface;
+    private String clusterIP;
+    private int clusterPort;
+    private int ipVersion;
+    private String clusterVersion = "1";
+
 
     String protocolStack = "udp.xml";
 
     Map<Address,MemberRecord> memberRecords = new ConcurrentHashMap<>();
 
-    public Messenger(String clusterName, String clusterIP, int clusterPort, String bindInterface) {
+    public Messenger(String clusterName, String clusterIP, int clusterPort, String bindInterface, int ipVersion) {
         try{
             this.clusterName = clusterName;
             this.bindInterface = bindInterface;
@@ -52,6 +54,12 @@ public class Messenger {
 
             if(bindInterface.length() > 1)
                 stack.findProtocol(UDP.class).setValue("bind_interface", bindInterface);
+
+            if(ipVersion == 4)
+                System.setProperty("java.net.preferIPv4Stack", "true");
+
+            if(ipVersion == 6)
+                System.setProperty("java.net.preferIPv4Stack", "false");
 
             ClassConfigurator.add(new KeepAlive().getMagicId(), KeepAlive.class);
             clusterChannel.stats(true);
