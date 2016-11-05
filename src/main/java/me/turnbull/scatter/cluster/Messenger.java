@@ -52,8 +52,8 @@ public class Messenger {
             if(clusterPort > 0)
                 stack.findProtocol(UDP.class).setValue("mcast_port", clusterPort);
 
-            if(bindInterface.length() > 1)
-                stack.findProtocol(UDP.class).setValue("bind_interface", bindInterface);
+            //if(bindInterface.length() > 1)
+            //    stack.findProtocol(UDP.class).setValue("bind_interface", bindInterface);
 
             if(ipVersion == 4)
                 System.setProperty("java.net.preferIPv4Stack", "true");
