@@ -1,6 +1,7 @@
 package me.turnbull.scatter.cluster;
 
 import me.turnbull.scatter.cluster.header.KeepAlive;
+import me.turnbull.scatter.cluster.postoffice.MemberRecord;
 import me.turnbull.scatter.cluster.postoffice.MessageReceiver;
 import org.jgroups.*;
 import org.jgroups.conf.ClassConfigurator;
@@ -55,6 +56,11 @@ public class Messenger {
         return clusterChannel.view().getMembers().size();
     }
     public Collection<MemberRecord> getMemberList(){ return memberRecords.values(); }
+
+    public String getClusterIP(){ return "228.8.8.8"; }
+    public String getClusterPort(){ return "45566"; }
+    public String getClusterVersion(){ return "1"; }
+
     public long getReceivedBytes(){
         return clusterChannel.getReceivedBytes();
     }
@@ -120,14 +126,5 @@ public class Messenger {
         }
     }
 
-    public class MemberRecord {
-        public final Address memberAddress;
-        public final String memberIpAddress;
-        public final long memberPing;
-        public MemberRecord(Address memberAddress,String memberIpAddress, long memberPing){
-            this.memberAddress = memberAddress;
-            this.memberIpAddress = memberIpAddress;
-            this.memberPing = memberPing;
-        }
-    }
+
 }

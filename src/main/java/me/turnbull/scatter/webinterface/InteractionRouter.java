@@ -1,7 +1,7 @@
 package me.turnbull.scatter.webinterface;
 
 import me.turnbull.scatter.cluster.Messenger;
-
+import me.turnbull.scatter.cluster.postoffice.MemberRecord;
 import static spark.Spark.*;
 
 /**
@@ -55,7 +55,7 @@ public class InteractionRouter {
                     messenger.getClusterCoordinator(),
                     messenger.getClusterCoordinator()));
             stringBuilder.append(String.format("<Members size=\"%s\" >",messenger.getMemberCount()));
-            for(Messenger.MemberRecord member : messenger.getMemberList()) {
+            for(MemberRecord member : messenger.getMemberList()) {
                 stringBuilder.append(String.format("<Member name=\"%s\" ipaddress=\"%s\" ping=\"%s\"/>",member.memberAddress.toString(),member.memberIpAddress,member.memberPing));
             }
             stringBuilder.append("</Members>");
