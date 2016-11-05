@@ -26,6 +26,7 @@ public class Messenger {
 
     JChannel clusterChannel;
     String clusterName;
+    String bindInterface;
     String clusterIP;
     int clusterPort;
     String clusterVersion = "1";
@@ -34,9 +35,10 @@ public class Messenger {
 
     Map<Address,MemberRecord> memberRecords = new ConcurrentHashMap<>();
 
-    public Messenger(String clusterName, String clusterIP, int clusterPort) {
+    public Messenger(String clusterName, String clusterIP, int clusterPort, String bindInterface) {
         try{
             this.clusterName = clusterName;
+            this.bindInterface = bindInterface;
             this.clusterIP = clusterIP;
             this.clusterPort = clusterPort;
             clusterChannel = new JChannel(protocolStack);
@@ -47,6 +49,9 @@ public class Messenger {
 
             if(clusterPort > 0)
                 stack.findProtocol(UDP.class).setValue("mcast_port", clusterPort);
+
+            if(bindInterface.length() > 1)
+                stack.findProtocol(UDP.class).setValue("bind_interface", bindInterface);
 
             ClassConfigurator.add(new KeepAlive().getMagicId(), KeepAlive.class);
             clusterChannel.stats(true);
